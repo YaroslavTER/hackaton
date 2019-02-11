@@ -1,14 +1,69 @@
 body{
     margin: 20px;
-    background-color: #bfd7ff;
+    background-color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+}
+.form-wrapper {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center; 
+    background-color: #ffcb23;
+    padding: 50px;
+}
+.form-wrapper__header {
+    color: white;
+}
+.form__select {
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 50%;
+}
+.form__select:focus {
+    outline: none; 
+}
+.form__button {
+    background: #006c87;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 50px;
+    display: block;
+    margin: 20px auto;
 }
 .main {
     display: grid; 
     grid-gap: 16px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 15%);
+    grid-template-rows: repeat(6, 15%);
     max-width: 100%;
+    list-style-type: none; 
+    justify-content: center;
+    padding-left: 0px;
 }
-.main__card--hidden,
-.main__card--shown {
-    max-width: 100px;
+.main__card {
+    position: relative;
+    z-index: 0;
+    background: white;
+    box-shadow: 5px 5px 2px rgba(0,0,0, .2);
 }
+.main__card::after {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:red;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    transition: height .3s ease-in-out;
+}
+.main__card .main__image {
+    width:100%;
+    height: 100%;
+    object-fit: contain; 
+}
+.main__card.main__card--active::after {
+    height: 0;
+}
+
+

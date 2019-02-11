@@ -45,5 +45,6 @@ function fillImages(array, fragment) {
 
 let element = document.getElementById("ul");
 let fragment = document.createDocumentFragment();
+
 fillImages(array, fragment);
 element.appendChild(fragment);
