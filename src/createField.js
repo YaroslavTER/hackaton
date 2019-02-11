@@ -1,18 +1,30 @@
 const array = [1, 5, 1, 4, 5];
-let prevItem = null;
+let prevItem = {
+  value: null,
+  index: null
+};
+
+function reset(item, index) {
+  if (!prevItem.value) {
+    prevItem.value = item;
+    prevItem.index = index;
+    return;
+  }
+}
 
 function fillImages(array, fragment) {
   array.forEach(function(item, index) {
     var li = document.createElement("li");
     li.addEventListener("click", () => {
-      if (prevItem === item) {
+      if (prevItem.value === item && prevItem.index !== index) {
         console.log("match");
+        prevItem = {};
       } else {
-        prevItem = null;
+        console.log("reset");
+        prevItem = {};
       }
-      if (!prevItem) {
-        prevItem = item;
-      }
+      reset(item, index);
+      /* item index prevItem {value index} */
     });
     li.innerHTML = `<img data-value=${item} data-index=${index} src="./src/img/${item}.jpg"/>`;
     fragment.appendChild(li);
@@ -29,4 +41,3 @@ element.appendChild(fragment); /*
 } */
 
 console.log(array);
-//createField(array);
