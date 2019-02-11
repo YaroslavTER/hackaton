@@ -24,9 +24,9 @@ function fillImages(array, fragment) {
 function createField(array) { */
 let element = document.getElementById("ul");
 let fragment = document.createDocumentFragment();
-fillImages(array, fragment);
+//fillImages(array, fragment);
 element.appendChild(fragment); /* 
 } */
 
 console.log(array);
-createField(array);
+//createField(array);
