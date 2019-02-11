@@ -10,14 +10,37 @@ inputForm.button.onclick = () => {
     return false;
 };
 
-
 function sortItems(level) {
-    switch (level) {
-        case '1': return [1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2];
-        case '2': return [2, 2, 1, 3, 1, 2, 1, 3, 3, 2, 3, 2, 1, 2, 1, 2, 3, 2, 1, 3, 3, 1, 2, 2, 2, 1, 2, 1, 2, 3, 2, 1, 1, 2, 2, 1];
-        case '3': return [2, 4, 1, 3, 1, 4, 1, 3, 3, 2, 3, 2, 1, 4, 3, 2, 1, 2, 1, 3, 4, 1, 4, 2, 2, 4, 2, 1, 4, 3, 2, 4, 1, 4, 2, 1];
-        case '4': return [2, 4, 5, 3, 1, 4, 5, 3, 3, 2, 3, 5, 1, 4, 3, 5, 1, 2, 1, 3, 4, 1, 5, 2, 2, 4, 5, 1, 4, 3, 2, 5, 1, 4, 2, 1];
+    const levels = {
+        1: {
+            1 : 18,
+            2 : 18,
+        },
+        2: {
+            1 : 12,
+            2 : 10,
+            3 : 14,
+        },
+        3: {
+            1 : 6,
+            2 : 10,
+            3 : 8,
+            4 : 12,
+        },
+        4: {
+            1 : 6,
+            2 : 8,
+            3 : 6,
+            4 : 10,
+            5 : 6,
+        },
+    };
+    const fields = levels[level];
+
+    return Object.keys(fields).reduce((acc, item ) => [...acc, ...new Array(fields[item]).fill(item)], []).sort(compareRandom);
+
+    function compareRandom(a, b) {
+        return Math.random() - 0.5;
     }
+
 }
-
-
