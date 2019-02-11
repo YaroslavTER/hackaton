@@ -6,9 +6,11 @@ function createField(array) {
 
   array.forEach(function(item) {
     var li = document.createElement("li");
-
+    li.textContent = ``;
     fragment.appendChild(li);
   });
 
   element.appendChild(fragment);
 }
+
+li.textContent = item;
