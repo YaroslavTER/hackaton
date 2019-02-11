@@ -5,121 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./src/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
     <header class="header"></header>
-    <form action="" class="form">
-        <select name="form__select" id="" class="form__select">
-          <option value="1" class="form__select--level">Easy</option>
-          <option value="2" class="form__select--level">Normal</option>
-          <option value="3" class="form__select--level">Hard</option>
-          <option value="4" class="form__select--level">Extra hard</option>
+    <div class="form-wrapper">
+      <h1 class="form-wrapper__header">Please, choose level hardness</h1>
+      <form action="" class="form">
+        <select name="" id="" class="form__select">
+          <option value="" class="form__select--level">Easy</option>
+          <option value="" class="form__select--level">Normal</option>
+          <option value="" class="form__select--level">Hard</option>
+          <option value="" class="form__select--level">Extra hard</option>
         </select>
-        <button name="button" class="form__button">Start</button>
-      </form>
-    <main class="main">
-   
-      <div class="main__card">
-        <img src="./src/img/1.jpg" alt="" class="main__card--shown">
-      </div>
-     <div class="main__card">
-        <img src="./src/img/2.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="./src/img/3.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="./src/img/4.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/5.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/1.jpg" alt="" class="main__card--shown">
-      </div>
-     <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/2.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/3.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/4.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/5.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/1.jpg" alt="" class="main__card--shown">
-      </div>
-     <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/2.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/3.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/4.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/5.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/1.jpg" alt="" class="main__card--shown">
-      </div>
-     <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/2.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/3.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/4.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/5.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/1.jpg" alt="" class="main__card--shown">
-      </div>
-     <div class="main__card">
-        <img src="" alt="" class="main__card--hidden">
-        <img src="./src/img/2.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/3.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/4.jpg" alt="" class="main__card--shown">
-      </div>
-      <div class="main__card">
-          <img src="" alt="" class="main__card--hidden">
-          <img src="./src/img/5.jpg" alt="" class="main__card--shown">
-      </div>
+        <button class="form__button">Start</button>
+    </form>
+    </div>
+    <ul class="main" id="ul">
+      <li class="main__card main__card--active">
+        <img src="./src/img/1.jpg" alt="" class="main__image">
+      </li>
+     <li class="main__card" >
+        <img src="./src/img/2.jpg" alt="" class="main__image">
+      </li>
+     <li class="main__card" >
+        <img src="./src/img/2.jpg" alt="" class="main__image">
+      </li>
+      <li class="main__card main__card--active">
+          <img src="./src/img/1.jpg" alt="" class="main__image">
+        </li>
+       <li class="main__card" >
+          <img src="./src/img/2.jpg" alt="" class="main__image">
+        </li>
+       <li class="main__card" >
+          <img src="./src/img/2.jpg" alt="" class="main__image">
+        </li>
+        <li class="main__card main__card--active">
+            <img src="./src/img/1.jpg" alt="" class="main__image">
+          </li>
+         <li class="main__card" >
+            <img src="./src/img/2.jpg" alt="" class="main__image">
+          </li>
+         <li class="main__card" >
+            <img src="./src/img/2.jpg" alt="" class="main__image">
+          </li>
 
-    </main>
+    </ul>
 
-    <ul id="ul"></ul>
   </body>
   <script src="./src/script.js"></script>
   <script src="./src/sortItems.js"></script>
