@@ -3,10 +3,16 @@ let wrapper = document.getElementsByClassName('main')[0];
 wrapper.innerHTML = '';
 
 inputForm.button.onclick = () => {
+    const main = document.getElementsByClassName('main')[0];
+    main.style.display = "grid";
+
+
+
     let level = inputForm.form__select.value;
     wrapper.innerHTML = '';
+    console.log('works');
     fillImages(sortItems(level), wrapper);
-    console.log(sortItems(level).length);
+   console.log(sortItems(level).length);
     return false;
 };
 

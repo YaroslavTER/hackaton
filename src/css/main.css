@@ -51,7 +51,7 @@ body {
     outline: none; 
 }
 .main {
-    display: grid; 
+    display: none;
     grid-gap: 16px;
     grid-template-columns: repeat(6, 15%);
     grid-template-rows: repeat(6, 15%);
@@ -91,7 +91,8 @@ body {
     height: 100%;
     object-fit: contain; 
 }
-.main__card.main__card--active::after {
+.main__card.main__card--active::after,
+.main__card.main__card--match::after{
     height: 0;
 }
 

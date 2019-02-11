@@ -3,15 +3,35 @@ let prevItem = null;
 
 function save(value, index) {
   prevItem = { value, index };
-  console.log("save", index);
+
 }
 
 function match(prevIndex, currentIndex) {
   console.log("match", prevIndex, currentIndex);
+  const elemArr = [...document.querySelectorAll(`.main__card--active`)];
+  elemArr.forEach(element => {
+    element.onclick = () => {};
+    element.classList.add("main__card--match");
+    element.classList.remove("main__card--active");
+
+  })
+  const matchArray = document.getElementsByClassName('main__card--match');
+  if (matchArray.length == 4) {
+    alert('you won');
+    const main = document.getElementsByClassName('main')[0];
+    main.style.display = "none";
+    const wrapper = document.getElementsByClassName('animation-wrapper--hide')[0];
+    wrapper.classList.remove('animation-wrapper--hide');
+  }
+
 }
 
 function reset(prevIndex, currentIndex) {
   console.log("reset", prevIndex, currentIndex);
+  const elemArr = [...document.querySelectorAll(`.main__card--active`)];
+  elemArr.forEach(element => {
+    element.classList.remove("main__card--active");
+  })
 }
 
 function changeState(id, isOpen) {
@@ -20,25 +40,37 @@ function changeState(id, isOpen) {
   return element;
 }
 
+function open(index) {
+  const elem = document.querySelector(`li[data-index="${index}"]`);
+  elem.classList.add("main__card--active");
+}
+
 function fillImages(array, fragment) {
   array.forEach(function(item, index) {
     var li = document.createElement("li");
-    li.addEventListener("click", () => {
+
+    li.dataset.index = index;
+    li.dataset.value = item;
+
+    li.classList.add('main__card');
+    li.onclick = () => {
+      open(index);
       if (prevItem) {
         if (prevItem.value === item && prevItem.index !== index) {
-          //console.log("match");
+          //console.log("match")
           match(prevItem.index, index);
           prevItem = null;
         } else {
           /* console.log("reset"); */
+          //setTimeout(() => {reset(prevItem.index, index);}, 1000);
           reset(prevItem.index, index);
           prevItem = null;
         }
       } else if (!prevItem) {
         save(item, index);
       }
-    });
-    li.innerHTML = `<img data-value=${item} data-index=${index} id=${index} src="./src/img/${item}.jpg"/>`;
+    };
+    li.innerHTML = `<img class="main__image" src="./src/img/${item}.jpg"/>`;
     fragment.appendChild(li);
   });
 }
