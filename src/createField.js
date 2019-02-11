@@ -16,8 +16,8 @@ function match(prevIndex, currentIndex) {
 
   })
   const matchArray = document.getElementsByClassName('main__card--match');
-  if (matchArray.length == 4) {
-    alert('you won');
+  if (matchArray.length == 8) {
+
     const main = document.getElementsByClassName('main')[0];
     main.style.display = "none";
     const wrapper = document.getElementsByClassName('animation-wrapper--hide')[0];

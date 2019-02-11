@@ -5,8 +5,10 @@ wrapper.innerHTML = '';
 inputForm.button.onclick = () => {
     const main = document.getElementsByClassName('main')[0];
     main.style.display = "grid";
-
-
+    const wrapp = document.getElementsByClassName('animation-wrapper')[0];
+    wrapp.classList.add('animation-wrapper--hide');
+    const wrappForm = document.getElementsByClassName('form-wrapper')[0];
+    wrappForm.style.display = "none";
 
     let level = inputForm.form__select.value;
     wrapper.innerHTML = '';
