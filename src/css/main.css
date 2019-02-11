@@ -1,0 +1,14 @@
+body{
+    margin: 20px;
+    background-color: #bfd7ff;
+}
+.main {
+    display: grid; 
+    grid-gap: 16px;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 100%;
+}
+.main__card--hidden,
+.main__card--shown {
+    max-width: 100px;
+}
